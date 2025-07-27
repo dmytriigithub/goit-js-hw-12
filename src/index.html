@@ -1,23 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
 
-    <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
-    </main>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanilla App Template</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
 
-    <load src="./partials/footer.html" />
+<body>
+  <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
 
-    <script type="module" src="./main.js"></script>
-  </body>
+  <main>
+    <section class="search-section">
+      <div class="container">
+        <form class="form">
+          <label>
+            <input type="text" name="search_text" placeholder="Search images..." required>
+          </label>
+          <button type="submit">Search</button>
+        </form>
+
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="container">
+        <ul class="gallery"></ul>
+
+        <div class="gallery-controls">
+          <button class="load-more-btn load-more-btn-hidden">Load more</button>
+          <div class="loader-box loader-box-hidden">
+            <span class="loader"></span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
 </html>
