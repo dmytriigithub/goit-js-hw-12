@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanilla App Template</title>
+  <script type="module" crossorigin src="/goit-js-hw-12/index.js"></script>
+  <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-5YrzWRhu.js">
+  <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/vendor-CWKLx11g.css">
+  <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/index-CwPC8g9R.css">
+</head>
+
+<body>
+  <header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a class="nav-logo" href="./index.html" aria-label="Site logo">
+        <svg class="nav-logo-icon" width="100" height="30">
+          <use href="/goit-js-hw-12/assets/sprite-E8vg0sBb.svg#logo"></use>
+        </svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <section class="search-section">
+      <div class="container">
+        <form class="form">
+          <label>
+            <input type="text" name="search_text" placeholder="Search images..." required>
+          </label>
+          <button type="submit">Search</button>
+        </form>
+
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="container">
+        <ul class="gallery"></ul>
+
+        <div class="gallery-controls">
+          <button class="load-more-btn load-more-btn-hidden">Load more</button>
+          <div class="loader-box loader-box-hidden">
+            <span class="loader"></span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+</body>
+
+</html>
