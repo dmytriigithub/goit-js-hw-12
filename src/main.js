@@ -24,7 +24,7 @@ refs.loadMoreBtn.addEventListener("click", handleLoadMore);
 
 async function handleSubmit(event) {
     event.preventDefault();
-
+    const form = event.target;
     const searchValue = event.target.elements.search_text.value.trim();
 
     if (!searchValue) {
@@ -41,7 +41,7 @@ async function handleSubmit(event) {
     }
 
     query = searchValue;
-    page = 32;
+    page = 1;
     totalHits = 0;
 
     clearGallery();
@@ -69,8 +69,18 @@ async function handleSubmit(event) {
 
         if (totalHits > params.per_page) {
             showLoadMoreButton();
+        } else {
+            iziToast.warning({
+                messageColor: '#fff',
+                iconUrl: caution,
+                iconColor: '#ffffffff',
+                maxWidth: '350px',
+                position: 'topRight',
+                color: '#ffa000',
+                message: "We're sorry, but you've reached the end of search results."
+            });
         }
-
+        event.target.reset();
     } catch (error) {
         iziToast.error({
             messageColor: '#fff',
@@ -84,7 +94,6 @@ async function handleSubmit(event) {
         console.error(error.message);
     } finally {
         hideLoader();
-        event.target.reset();
     }
 }
 
@@ -96,8 +105,6 @@ async function handleLoadMore() {
     showLoader();
 
     try {
-        console.log(page);
-
         const data = await getImagesByQuery(query, page);
         createGallery(data.hits);
         smoothScrollLoadMore();
